@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script>
+      hello = () => {
+        let opts = {
+          headers: {
+            "Authorization" : "MyKEY"
+          }
+        }
+
+        fetch('http://localhost:3000/hello', opts)
+          .then((response) => {
+            return response.json();
+          })
+          .then((myJson) => {
+            console.log(JSON.stringify(myJson));
+          });
+      }
+    </script>
+</head>
+
+<body>
+<h1>
+    Advanced CORS Requests
+</h1>
+<div>
+    Get with a header
+</div>
+</br>
+<button onclick="hello()">GET</button>
+</body>
+</html>

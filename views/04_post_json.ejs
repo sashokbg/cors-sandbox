@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script>
+      save = () => {
+        let message = document.getElementById('message').value
+        fetch('http://localhost:3000/save', {
+          method: 'POST',
+          body: JSON.stringify({message}),
+          // headers: {
+          //   "Content-type" : "application/json"
+          // }
+        })
+        .then((response) => {
+          return response.json();
+        })
+        .then((myJson) => {
+          console.log(JSON.stringify(myJson));
+        });
+      }
+    </script>
+</head>
+
+<body>
+<h1>
+    Advanced CORS Requests
+</h1>
+<div>
+    Post
+</div>
+</br>
+Message: </br>
+<input id="message" />
+<br>
+<button onclick="save()">POST</button>
+</body>
+</html>

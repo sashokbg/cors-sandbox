@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script>
+      hello = () => {
+        fetch('http://localhost:3000/hello')
+          .then((response) => {
+            return response.json();
+          })
+          .then((myJson) => {
+            console.log(JSON.stringify(myJson));
+          });
+      }
+    </script>
+</head>
+
+<body>
+<h1>
+    Simple CORS Requests
+</h1>
+<div>
+    Simple GET request
+</div>
+</br>
+<button onclick="hello()">GET</button>
+</body>
+</html>
